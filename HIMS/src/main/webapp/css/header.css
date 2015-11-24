@@ -1,0 +1,57 @@
+@CHARSET "EUC-KR";
+.header {
+	height: 100px;
+    border-bottom:3px solid #444444;
+    background-color:white;
+}
+.header, .footer {
+    color:black;
+}
+.nav ul  {
+    margin-top: 30px;
+    padding:0;
+}
+.nav ul li {
+    display:inline;
+    margin: 5px;
+    padding: 30px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.logo {
+	float: left;
+	width: 20%;
+	height: 100px;
+	margin-top: 10px;
+	margin-left: 13%;
+}
+.menubar {
+	float: right;
+	margin-right: 20%;
+	margin-top: 5px;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+.menubar li ul {
+	display: none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+	background: white;
+	border:3px solid #CC0000;
+	border-radius: 6px;
+	position: absolute;
+	margin-top: 20px;
+	padding: 10px;
+	width:140px;
+	font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 12px;
+    z-index: 1;
+}
+.menubar li ul li {
+	text-align: center;
+}
+.menubar li:hover ul {
+	display:block;   /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
+}

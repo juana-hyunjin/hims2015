@@ -1,0 +1,13 @@
+@CHARSET "EUC-KR";
+
+.body {
+	margin: 0px;
+}
+
+.footer {
+	margin-bottom: 0;
+}
+
+.footer h4 {
+	margin-top: 12px;
+}
