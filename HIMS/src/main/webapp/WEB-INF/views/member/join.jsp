@@ -22,12 +22,6 @@
 			</div>
 			<br />
 			<div class="joinElement">
-				<label>이 름</label><br/><br>
-				<input type="text" name="name" id="name" placeholder="이름을 입력해 주세요.">
-				<label class="check" name="check2" id="check2"> &nbsp; </label>
-			</div>
-			<br />
-			<div class="joinElement">
 				<label>비밀번호</label><br/><br>
 				<input type="password" name="userpw" id="userpw" placeholder="비밀번호를 입력해주세요.(4자 이상)">
 				<br/><br/> 
@@ -35,10 +29,16 @@
 				<br/>
 			</div>
 			<div class="joinElement">
+				<label>이 름</label><br/><br>
+				<input type="text" name="name" id="name" placeholder="이름을 입력해 주세요.">
+				<label class="check" name="check2" id="check2"> &nbsp; </label>
+			</div>
+			<br />			
+			<div class="joinElement">
 				<label>생년월일</label><br/><br>
 				<input type="text" name="birth" id="birth" maxlength="6" onkeyup="checkNumber(document.joinform.birth)" placeholder="생년월일을 입력해주세요. (6자리)">
 				<br/><br/> 
-			</div>
+			</div>			
 			<div class="joinElement2">
 				<label>전화번호</label><br/><br/> 
 				<select name=mobile1 style="width: 60px" id="mobile1" onchange="nextfocus(this.value);">

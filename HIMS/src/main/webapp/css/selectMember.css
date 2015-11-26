@@ -1,0 +1,20 @@
+@CHARSET "EUC-KR";
+table {
+	align: center;
+}
+table td {
+	padding: 10px;
+}
+#searchSector {
+	margin-top: 20px;
+}
+#resultSector {
+	margin-top: 30px;
+}
+#resultSector tr th {
+	font-size: 15px;
+	text-align: center;
+}
+#resultSector tr td {
+	text-align: center;
+}
