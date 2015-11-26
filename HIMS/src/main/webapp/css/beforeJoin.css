@@ -1,0 +1,188 @@
+@CHARSET "EUC-KR";
+
+body{
+	background-image:url(images/join_changeInfo.JPG);
+	background-size: 100% 100%;
+}
+
+a {
+	font-weight:bolder; text-decoration:none
+}
+
+.titleSector {
+	width:600px;
+}
+
+.joinInfo {
+	padding-top:20px;
+	padding-left:20px;
+	padding-right:20px;
+	text-size:12px;
+}
+
+.joinInfo a {
+	margin-left:20px;
+}
+
+.btnSector{
+	margin-top: 50px;
+	text-align:center;
+}
+.btnSector button{
+	align: center;
+	margin-top:10px;
+	border-radius:3px;
+	border:none;
+	width:145px;
+	height:50px;
+	font-size:15px;
+}
+
+.join-next {
+	background-color:#CC0000;
+	color:#ffffff;
+}
+
+.join-prev {
+	background-color:rgb(130,129,128);
+	color:#ffffff;
+}
+.joinSector {
+	margin : 0 auto;
+	margin-top:10px;
+	width:600px;
+	height:500px;
+	border-radius:5px;
+	background-color:#ffffff;
+	opacity:0.8;
+}
+.joinSector img {
+	width: 50px;
+	height: 50px;
+}
+
+.joinElement {
+	text-align:left;
+	margin-left:40px;
+}
+
+.joinElement2 {
+	text-align:left;
+	margin-left:40px;
+}
+
+.joinElement2 select{
+	height:33px;
+}
+
+.joinElement2 input[type="text"] {
+	height:28px;
+}
+
+.joinElement3 {
+	text-align:left;
+	margin-left:40px;
+}
+
+.joinElement3 input[type="text"] {
+	height:28px;
+	width:395px;
+}
+
+.joinElement3 select {
+	height:32px;
+}
+
+.joinElement4 {
+	text-align:left;
+	margin-left:40px;
+}
+
+.joinElement5 button {
+	width:300px;
+	height:40px;
+	text-align:center;
+	font-size:13px;
+	color:rgb(255,255,255);
+	background-color:rgb(0,166,222);
+	border:0;
+	outline:0;
+	border-radius:3px;
+}
+
+.joinElement input[type="text"] {
+	text-align:left;
+	width:450px;
+	height:30px;
+	border:none;
+	border-bottom:1px solid;
+	font-size:15px;
+	color:rgb(130,129,128);
+	
+}
+
+.joinElement button {
+	width:70px;
+	height:30px;
+	text-align:center;
+	font-size:13px;
+	color:rgb(255,255,255);
+	background-color:rgb(0,166,222);
+	border:0;
+	outline:0;
+	border-radius:3px;
+}
+
+.mobile {
+	width:65px;
+	height:25px;
+	border:1px solid;
+	color:rgb(130,129,128);
+	border-radius:3px;
+}
+
+.mobile1{
+	height:30px;
+	width:65px;
+	height:30px;
+	border:1px solid;
+	color:rgb(130,129,128);
+	border-radius:3px;
+}
+
+.email3{
+	height:30px;
+	width:115px;
+	height:30px;
+	border:1px solid;
+	color:rgb(130,129,128);
+	border-radius:3px;
+}
+
+.email {
+	width:100px;
+	height:25px;
+	border:1px solid;
+	color:rgb(130,129,128);
+	border-radius:3px;
+}
+
+.birth {
+	text-align:left;
+	width:200px;
+	height:30px;
+	border:none;
+	border-bottom:1px solid;
+	font-size:15px;
+	color:rgb(130,129,128);
+}
+
+label {
+	font-size:23px;
+	font-weight:bolder;
+	color:rgb(130,129,128);
+}
+
+.viewlogo {
+	margin-top: 30px;
+}
