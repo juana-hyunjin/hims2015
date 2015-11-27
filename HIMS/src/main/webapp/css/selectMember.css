@@ -6,7 +6,7 @@ table td {
 	padding: 10px;
 }
 #searchSector {
-	margin-top: 20px;
+	margin-top: 30px;
 }
 #resultSector {
 	margin-top: 30px;
@@ -17,4 +17,8 @@ table td {
 }
 #resultSector tr td {
 	text-align: center;
+}
+
+.viewlogo {
+	margin-top: 30px;
 }

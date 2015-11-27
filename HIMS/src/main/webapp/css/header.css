@@ -4,57 +4,6 @@
     border-bottom:3px solid #444444;
     background-color:white;
 }
-.header, .footer {
-    color:black;
-}
-.nav ul  {
-    margin-top: 30px;
-    padding:0;
-}
-.nav ul li {
-    display:inline;
-    margin: 5px;
-    padding: 30px;
-    font-family: 'Roboto Slab', serif;
-    font-weight: 400;
-    font-size: 20px;
-}
-.logo {
-	float: left;
-	width: 20%;
-	height: 100px;
-	margin-top: 10px;
-	margin-left: 15%;
-}
-.menubar {
-	float: right;
-	margin-top: 5px;
-	margin-right: 12%;
-}
-a {
-	text-decoration: none;
-	color: black;
-}
-.menubar li ul {
-	display: none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
-	background: white;
-	border:3px solid #CC0000;
-	border-radius: 6px;
-	position: absolute;
-	margin-top: 20px;
-	padding: 10px;
-	width:140px;
-	font-family: 'Roboto Slab', serif;
-    font-weight: 400;
-    font-size: 12px;
-    z-index: 1;
-}
-.menubar li ul li {
-	text-align: center;
-}
-.menubar li:hover ul {
-	display:block;   /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
-}
 .header-right {
 	float: right;
 }
@@ -67,4 +16,111 @@ a {
 	float: bottom;
 	margin-top: 60px;
 	margin-right: 10px;
+}
+.header, .footer {
+    color:black;
+}
+.nav ul  {
+    margin-top: 30px;
+    padding:0;
+}
+.nav ul li {
+    display:inline;
+    margin: 5px;
+    padding: 30px;
+    font-family: 'KoPub Batang', serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.logo {
+	float: left;
+	width: 20%;
+	height: 100px;
+	margin-top: 10px;
+	margin-left: 17%;
+}
+.menubar {
+	float: right;
+	margin-top: 5px;
+	margin-right: 8%;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+.menubar li ul {
+	background: white;
+	border:3px solid #CC0000;
+	border-radius: 6px;
+	margin-top: 20px;
+	padding: 10px;
+	width:140px;
+	font-family: 'KoPub Batang', serif;
+    font-weight: 400;
+    font-size: 12px;
+    z-index: 1;
+}
+.menubar li ul li {
+	text-align: center;
+}
+ul.topnav {
+	list-style: none;
+	padding: 0;
+	margin-top: 5px;
+	font-family: 'KoPub Batang', serif;
+	float: left;
+	margin-left: 0;
+}
+ul.topnav li {
+	float: left;
+	margin: 5px;
+    padding: 10px;
+	position: relative; /*--Declare X and Y axis base for sub navigation--*/
+}
+ul.topnav li a{
+	padding: 10px 5px;
+	color: #333;
+	font-size: 20px;
+	display: block;
+	text-decoration: none;
+	float: left;
+}
+/*-- 마우스를 상위 메뉴에 올리면 검은 바탕의 아래 화살표의 이미지를 보이게 한다. --*/
+ul.topnav li a:hover{
+	color: #C8CCD1;
+	display: inline;
+}
+
+/*--Hover effect for trigger--*/
+ul.topnav li ul.subnav {
+	list-style: none;
+	position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+	left: 0; 
+	top: 55px;
+	background: #333;
+	margin: 0; 
+	padding: 0;
+	display: none;
+	float: left;
+	width: 170px;
+	border: 1px solid #111;
+}
+ul.topnav li ul.subnav li{
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid #252525; /*--Create bevel effect--*/
+	border-bottom: 1px solid #444; /*--Create bevel effect--*/
+	clear: both;
+	color: #C8CCD1;
+	width: 170px;
+}
+html ul.topnav li ul.subnav li a {
+	float: left;
+	width: 145px;
+	background: #333;
+	color: #C8CCD1;
+	padding-left: 20px;
+}
+html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
+	color: #CC0000;
 }

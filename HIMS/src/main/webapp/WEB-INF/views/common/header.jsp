@@ -7,9 +7,11 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/earlyaccess/kopubbatang.css' rel='stylesheet' type='text/css'>
 <title></title>
 <link rel="stylesheet" type="text/css" href="css/header.css"/>
+<script type="text/javascript" src="./jquery.js"></script>
+<script src='jquery/header.js'></script>
 </head>
 <body>
 	<div class="nav">
@@ -39,17 +41,19 @@
 			</div>
 		</div>
 		<div class="menubar" align="center">
-		  <ul>
-		     <li>Managing ″
-		     	<ul>
-		     		<li><a href="member.member.do">Member</a></li>
-		     		<li><a href="#">Room</a></li>
-		     		<li><a href="#">Facility</a></li>
+		  <ul class="topnav">
+		     <li><a href="rsv.rsvMainView.do">抗距包府</a></li>
+		     <li>
+		     	<a class="haveSub" href="#">矫汲包府&nbsp;<img src="images/submenu.png" width="20px" height="17px"> 
+		     	</a>
+		     	<ul class="subnav">
+		     		<li><a href="room.room.do">按角包府</a></li>
+		     		<li><a href="#">何措矫汲包府</a></li>
 		     	</ul>
 		     </li>
-		     <li><a href="rsv.rsvMainView.do">Reservation</a></li>
-		     <li><a href="#">Event</a></li>
-		     <li><a href="#">Statistic</a></li>
+		     <li><a href="member.member.do">雀盔包府</a></li>
+		     <li><a href="#">捞亥飘包府</a></li>
+		     <li><a href="#">烹拌</a></li>
 		  </ul>
 		</div>
 	</div>

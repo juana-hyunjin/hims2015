@@ -13,7 +13,7 @@
 <body>
 	<jsp:include page="../common/header.jsp" />
 	<div class="viewlogo" align="center">
-	<img src="images/rsv.png" style="width:23%; height:20%;">
+	<img src="images/memberlogo.png" style="width:23%; height:20%;">
 	</div>
 	<div class="container" align="center">
 		<table id="searchSector" id="searchSector" align="center">
