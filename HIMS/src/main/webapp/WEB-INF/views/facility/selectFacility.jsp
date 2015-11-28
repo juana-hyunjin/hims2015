@@ -5,12 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>호텔통합관리시스템(HIMS)</title>
-<link rel="stylesheet" type="text/css" href="css/selectRoom.css">
+<link rel="stylesheet" type="text/css" href="css/selectFacility.css">
 </head>
 <body>
 	<jsp:include page="../common/header.jsp" />
 	<div class="viewlogo" align="center">
-	<img src="images/roomlogo.png" style="width:23%; height:20%;">
+	<img src="images/faclogo.png" style="width:23%; height:20%;">
 	</div>
 	<!-- 본문 영역 시작 -->
 	<div class="container">

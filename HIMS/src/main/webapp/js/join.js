@@ -4,10 +4,9 @@
 function exeAction(actionUrl) {
 	var actionForm = document.getElementById("joinform");
 	var userid = document.getElementById("userid").value;
-	var name = document.getElementById("name").value;
-	if (actionUrl == "member.checkId.do") {
+	if (actionUrl == "member.checkid.do") {
 		$.ajax({
-			url : 'member.checkId.do',
+			url : 'member.checkid.do',
 			dataType : 'json',
 			type : 'post',
 			data : {

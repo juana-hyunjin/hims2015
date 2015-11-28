@@ -7,7 +7,10 @@
 <title>호텔통합관리시스템(HIMS))</title>
 <link rel="stylesheet" type="text/css" href="css/join.css"/>
 <!-- 데이터 유효성검사 -->
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src='js/join.js'></script>
+
 </head>
 <body>
 	<jsp:include page="../common/header.jsp" />
@@ -17,7 +20,7 @@
 			<div class="joinElement">
 				<label>아이디</label><br/><br>
 				<input type="text" name="userid" id="userid" placeholder="아이디를 입력해 주세요.">
-				<button onclick="return exeAction('member.checkId.do')">중복체크</button><br/>
+				<button onclick="return exeAction('member.checkid.do')">중복체크</button><br/>
 				<label class="check" name="check1" id="check1"> &nbsp; </label>
 			</div>
 			<br />

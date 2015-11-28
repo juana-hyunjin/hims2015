@@ -11,12 +11,11 @@
 <link rel="stylesheet" type="text/css" href="css/rsvMain.css">
 </head>
 <body>
-<header>
 <jsp:include page="../common/header.jsp" />
-</header>
 <div class="viewlogo" align="center">
 	<img src="images/rsv.png" style="width:23%; height:20%;">
 </div>
+<!-- 본문영역 시작 -->
 <div class="content" align="center">
 		<table>
 			<tr>
@@ -78,8 +77,7 @@
 			</tr>
 		</table>
 </div>
-<footer>
+<!-- 본문 영역 끝 -->
 <jsp:include page="../common/footer.jsp" />
-</footer>
 </body>
 </html>
