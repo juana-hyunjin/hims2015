@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syu.mapper.ReservationMapper">
+	<resultMap id="rsvResult" type="com.syu.hims.dto.Reservation">
+		<result property="rsvNo" column="RESERVATION_NO" />
+		<result property="userid" column="USERID" />
+		<result property="roomTypeNo" column="ROOM_TYPE_NO" />
+		<result property="headCount" column="HEAD_COUNT" />
+		<result property="chkInDate" column="CHKIN_DATE" />
+		<result property="chkOutDate" column="CHKOUT_DATE" />
+		<result property="memo" column="MEMO" />
+	</resultMap>
+	<resultMap id="searchResult" type="com.syu.hims.dto.Reservation">
+		<result property="username" column="USERNAME" />
+		<result property="mobile" column="MOBILE" />
+		<result property="typeName" column="TYPE_NAME" />
+		<result property="chkInDate" column="CHKIN_DATE" />
+		<result property="chkOutDate" column="CHKOUT_DATE" />
+		<result property="headCount" column="HEAD_COUNT" />
+		<result property="memo" column="MEMO" />
+	</resultMap>
+	
+	<!-- 예약번호로 해당 데이터 검색 -->
+	<select id="searchData" resultMap="searchResult" parameterType="int">
+		SELECT M.USERNAME, M.MOBILE, RT.TYPE_NAME, R.CHKIN_DATE, R.CHKOUT_DATE, R.HEAD_COUNT, R.MEMO
+		FROM MEMBER M, RESERVATION R, ROOM_TYPE RT
+		WHERE M.USERID = R.USERID 
+			  AND R.ROOM_TYPE_NO = RT.ROOM_TYPE_NO
+			  AND RESERVATION_NO = #{rsvNo}
+	</select>
+</mapper>

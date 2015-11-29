@@ -9,6 +9,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/rsvMain.css">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src='js/rsvMain.js'></script>
 </head>
 <body>
 <jsp:include page="../common/header.jsp" />
@@ -17,38 +20,40 @@
 </div>
 <!-- 본문영역 시작 -->
 <div class="content" align="center">
+	<form id="searchForm" name="searchForm" action="rsv.search.do" method="post">
 		<table>
 			<tr>
 				<td align="right"><label>예약번호</label></td>
 				<td width="300px"><input type="text" class="form-control" name="bookNo" id="bookNo"></td>
 				<td align="left">
-					<button type="button" class="btn btn-default btn-md">
+					<button type="button" class="btn btn-default btn-md" onclick="return exeAction('rsv.search.do')">
 	          		<span class="glyphicon glyphicon-search"></span> Search 
 	       		     </button>
 				</td>
 			</tr>
 		</table>
+	</form>
 		<hr width="700px">
-		<table>
+		<table class="resultSector" id="searchData" name="searchData">
 			<tr>
 				<td><label>이름</label></td>
-				<td><input type="text" id="name" name="name" value="주현진" readOnly></td>
+				<td><input type="text" id="username" name="username" readOnly></td>
 				<td><label>휴대폰</label></td>
-				<td><input type="text" id="mobile" name="mobile" value="010-4706-9550" readOnly></td>
+				<td><input type="text" id="mobile" name="mobile" readOnly></td>
 				<td><label>방 종류</label></td>
-				<td><input type="text" id="kind" name="kind" value="President" readOnly></td>
+				<td><input type="text" id="kind" name="kind" readOnly></td>
 			</tr>
 			<tr>
 				<td><label>체크인</label></td>
-				<td><input type="text" id="checkin" name="checkin" value="2015-12-15" readOnly></td>
+				<td><input type="text" id="checkin" name="checkin" readOnly></td>
 				<td><label>체크아웃</label></td>
-				<td><input type="text" id="checkout" name="checkout" value="2015-12-17" readOnly></td>
+				<td><input type="text" id="checkout" name="checkout" readOnly></td>
 				<td><label>인원수</label></td>
-				<td><input type="text" id="headCount" name="headCount" value="2" readOnly></td>
+				<td><input type="text" id="headCount" name="headCount" readOnly></td>
 			</tr>
 			<tr>
 				<td><label>메모</label></td>
-				<td colspan="3"><input type="text" class="form-control" id="meno" name="memo" value="침대 두개짜리 방 주세요." readOnly></td>
+				<td colspan="3"><input type="text" class="form-control" id="meno" name="memo" readOnly></td>
 			</tr>
 			<tr>
 				<td><label>층</label></td>

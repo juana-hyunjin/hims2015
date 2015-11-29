@@ -13,14 +13,16 @@ function exeAction(actionUrl) {
 				"userid" : userid
 			},
 			success : function(check) {
-				if (check['result'] == true) {
+				if (check['result']=="true") {
+					$('#check1').attr('style', 'font-size:12px');
+					$('#check1').attr('style', 'border: none');
 					$('#check1').attr('style', 'color:red');
-					$('#check1').attr('style', 'font-size:8px');
-					$('#check1').html("이미 사용하고 있는 아이디 입니다.");
-				} else if (check['result'] == false) {
+					$('#check1').html("Sorry, This account is already exist.");
+				} 
+				if (check['result']=="false") {
 					$('#check1').attr('style', 'border:none');
 					$('#check1').attr('style', 'color:green');
-					$('#check1').html("사용 가능한 아이디 입니다.");
+					$('#check1').html("You can use this accounnt.");
 				}
 			}
 		});
