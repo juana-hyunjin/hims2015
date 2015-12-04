@@ -55,7 +55,7 @@ function checkOption2() {
 </script>
 </head>
 <body>
-	<jsp:include page="../common/header.jsp" />	
+	<jsp:include page="../common/strangerHeader.jsp" />	
 	<div class="viewlogo"align="center">
 		<img src="images/sublogo.png" align="middle" style="width:23%; height:15%;">
 	</div>

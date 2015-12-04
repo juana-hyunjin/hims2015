@@ -13,7 +13,7 @@
 
 </head>
 <body>
-	<jsp:include page="../common/header.jsp" />
+	<jsp:include page="../common/strangerHeader.jsp" />
 	<div class="joinSector">
 		<form id="joinform" name="joinform" action="member.join.do" method="post">
 			<br />

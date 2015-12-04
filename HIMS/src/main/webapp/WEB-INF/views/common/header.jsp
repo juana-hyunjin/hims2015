@@ -36,8 +36,7 @@
                </div>
 			</div>
 			<div class="loginBtn">
-				<img src="images/join.png" width="110px" height="40px" align="right" onclick="location.href='member.joinView.do'" >
-				<img src="images/login.png" width="100px" height="40px" align="right" onclick="location.href='member.loginView.do'">
+				<img src="images/logoutBtn.png" width="110px" height="40px" align="right" onclick="location.href='member.logout.do'">
 			</div>
 		</div>
 		<div class="menubar" align="center">
@@ -52,7 +51,7 @@
 		     	</ul>
 		     </li>
 		     <li><a href="member.member.do">회원관리</a></li>
-		     <li><a href="#">이벤트관리</a></li>
+		     <li><a href="event.selectEvent.do">이벤트관리</a></li>
 		     <li><a href="#">통계</a></li>
 		  </ul>
 		</div>

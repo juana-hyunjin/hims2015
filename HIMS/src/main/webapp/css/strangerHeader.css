@@ -1,0 +1,25 @@
+@CHARSET "EUC-KR";
+.header {
+	height: 100px;
+    border-bottom:3px solid #444444;
+    background-color:white;
+}
+.loginBtn {
+	float: bottom;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+.header, .footer {
+    color:black;
+}
+.logo {
+	float: left;
+	width: 20%;
+	height: 100px;
+	margin-top: 0px;
+	margin-left: 17%;
+}
+a {
+	text-decoration: none;
+	color: black;
+}

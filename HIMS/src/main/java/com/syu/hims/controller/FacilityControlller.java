@@ -9,4 +9,8 @@ public class FacilityControlller {
 	public String FacilityView() {
 		return "facility/selectFacility";
 	}
+	@RequestMapping("facility.addFacView.do")
+	public String addFacView() {
+		return "facility/addFacility";
+	}
 }

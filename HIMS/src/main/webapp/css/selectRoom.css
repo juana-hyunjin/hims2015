@@ -1,4 +1,34 @@
 @CHARSET "EUC-KR";
+body {
+	overflow: auto;
+}
+.content {
+	width: auto;
+	height: auto;
+	margin-top: 50px;
+	align: center;
+}
+
+table {
+	margin-top: 30px;
+	width: 600px;
+	border: none;
+}
+
+table tr{
+	text-align: center;
+	padding: 10px;
+}
+
+table th{
+	text-align: center;
+	padding: 10px;
+}
+
 .viewlogo {
 	margin-top: 30px;
+}
+.roomSearch {
+	margin-top: 0px;
+	margin-bottom: 100px;
 }

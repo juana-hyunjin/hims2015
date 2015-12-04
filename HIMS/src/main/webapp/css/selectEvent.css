@@ -1,7 +1,4 @@
 @CHARSET "EUC-KR";
-.viewlogo {
-	margin-top: 30px;
-}
 body {
 	overflow: auto;
 }
@@ -18,20 +15,36 @@ table {
 	border: none;
 }
 
-table tr{
+table tr {
 	text-align: center;
 	padding: 10px;
+}
+
+table td {
+	padding: 2px;
 }
 
 table th{
 	text-align: center;
 	padding: 10px;
+	font-size: 15px;
 }
 
 .viewlogo {
 	margin-top: 30px;
 }
-.facSearch {
-	margin-top: 0px;
+.selectType {
+	margin-top: 30px;
+	font-size: 20px;
+}
+button {
+	float: right;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+select {
+	width: 50px;
+}
+#addEventSector {
 	margin-bottom: 100px;
 }

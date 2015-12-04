@@ -1,22 +1,23 @@
 package com.syu.hims.dto;
 
 public class Reservation {
-	private int rsvNo;
+	private String rsvNo;
 	private String userid;
 	private int roomTypeNo;
 	private int headCount;
 	private String chkInDate;
 	private String chkOutDate;
 	private String memo;
+	private int roomNo;
 	
 	private String mobile;
 	private String typeName;
 	private String username;
 	
-	public int getRsvNo() {
+	public String getRsvNo() {
 		return rsvNo;
 	}
-	public void setRsvNo(int rsvNo) {
+	public void setRsvNo(String rsvNo) {
 		this.rsvNo = rsvNo;
 	}
 	public String getUserid() {
@@ -73,8 +74,14 @@ public class Reservation {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	public int getRoomNo() {
+		return roomNo;
+	}
+	public void setRoomNo(int roomNo) {
+		this.roomNo = roomNo;
+	}
 	
-	public Reservation(int rsvNo, String userid, int roomTypeNo, int headCount, String chkInDate, String chkOutDate,
+	public Reservation(String rsvNo, String userid, int roomTypeNo, int headCount, String chkInDate, String chkOutDate,
 			String memo, String mobile, String typeName, String username) {
 		super();
 		this.rsvNo = rsvNo;
@@ -87,8 +94,23 @@ public class Reservation {
 		this.mobile = mobile;
 		this.typeName = typeName;
 		this.username = username;
+	}public Reservation(String rsvNo, String userid, int roomTypeNo, int headCount, String chkInDate, String chkOutDate,
+			String memo, int roomNo, String mobile, String typeName, String username) {
+		super();
+		this.rsvNo = rsvNo;
+		this.userid = userid;
+		this.roomTypeNo = roomTypeNo;
+		this.headCount = headCount;
+		this.chkInDate = chkInDate;
+		this.chkOutDate = chkOutDate;
+		this.memo = memo;
+		this.roomNo = roomNo;
+		this.mobile = mobile;
+		this.typeName = typeName;
+		this.username = username;
 	}
-	public Reservation(int rsvNo, String userid, int roomTypeNo, int headCount, String chkInDate, String chkOutDate,
+
+	public Reservation(String rsvNo, String userid, int roomTypeNo, int headCount, String chkInDate, String chkOutDate,
 			String memo) {
 		super();
 		this.rsvNo = rsvNo;
@@ -99,7 +121,7 @@ public class Reservation {
 		this.chkOutDate = chkOutDate;
 		this.memo = memo;
 	}
-	public Reservation(int rsvNo, String userid, int roomTypeNo, int headCount, String chkInDate, String chkOutDate) {
+	public Reservation(String rsvNo, String userid, int roomTypeNo, int headCount, String chkInDate, String chkOutDate) {
 		super();
 		this.rsvNo = rsvNo;
 		this.userid = userid;
@@ -108,7 +130,7 @@ public class Reservation {
 		this.chkInDate = chkInDate;
 		this.chkOutDate = chkOutDate;
 	}
-	public Reservation(int rsvNo, String userid, int roomTypeNo, int headCount, String chkInDate, String chkOutDate,
+	public Reservation(String rsvNo, String userid, int roomTypeNo, int headCount, String chkInDate, String chkOutDate,
 			String memo, String mobile, String typeName) {
 		super();
 		this.rsvNo = rsvNo;
@@ -121,7 +143,7 @@ public class Reservation {
 		this.mobile = mobile;
 		this.typeName = typeName;
 	}
-	public Reservation(int rsvNo) {
+	public Reservation(String rsvNo) {
 		super();
 		this.rsvNo = rsvNo;
 	}

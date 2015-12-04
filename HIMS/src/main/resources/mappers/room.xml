@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syu.mapper.RoomMapper">
+	<resultMap id="roomResult" type="com.syu.hims.dto.Room">
+		<result property="roomNo" column="ROOM_NO" />
+		<result property="floor" column="FLOOR" />
+		<result property="availability" column="AVAILABILITY" />
+		<result property="roomTypeNo" column="ROOM_TYPE_NO" />
+	</resultMap>
+	<resultMap id="roomInfo" type="com.syu.hims.dto.RoomType">
+		<result property="roomNo" column="ROOM_NO" />
+		<result property="floor" column="FLOOR" />
+		<result property="price" column="PRICE" />
+		<result property="limitNum" column="LIMIT_NUM" />
+		<result property="bed" column="BED" />
+		<result property="typeName" column="TYPE_NAME" />
+	</resultMap>
+	
+	<!-- 객실관리에서 층별 방정보 검색 -->
+	<select id="searchRoomlist" resultMap="roomInfo" parameterType="String">
+		SELECT R.ROOM_NO, RT.LIMIT_NUM, RT.PRICE, RT.BED, RT.TYPE_NAME
+		FROM ROOM R, ROOM_TYPE RT
+		WHERE R.ROOM_TYPE_NO = RT.ROOM_TYPE_NO
+			  AND FLOOR = #{floor}
+	</select>
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syu.mapper.EventMapper">
+	<resultMap id="eventResult" type="com.syu.hims.dto.Event">
+		<result property="beaconMinor" column="BEACON_MINOR" />
+		<result property="facName" column="FAC_NAME" />
+		<result property="eventTime" column="EVENT_TIME" />
+		<result property="winner" column="WINNER" />
+	</resultMap>
+	
+	<!-- 이벤트 추가 -->
+	<insert id="addTimeEvent" parameterType="com.syu.hims.dto.Event">
+		INSERT INTO TIME_EVENT VALUES (#{beaconMinor}, #{facName}, #{eventTime}, #{winner})
+	</insert>
+	
+	<!-- time이벤트 모든 데이터 검색 -->
+	<select id="selectTimeEvent" resultMap="eventResult">
+		SELECT * FROM TIME_EVENT
+	</select>
+	
+	<!-- 이벤트 삭제 -->
+	<delete id="deleteTimeEvent" parameterType="HashMap">
+		DELETE FROM TIME_EVENT
+		WHERE BEACON_MINOR = #{beaconMinor}
+			  AND EVENT_TIME = #{eventTime}
+	</delete>
+</mapper>

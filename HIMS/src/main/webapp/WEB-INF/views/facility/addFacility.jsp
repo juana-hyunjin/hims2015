@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/selectFacility.css">
+<link rel="stylesheet" type="text/css" href="css/addFacility.css">
 </head>
 <body>
 	<jsp:include page="../common/header.jsp" />
@@ -16,45 +16,32 @@
 	<img src="images/faclogo.png" style="width:23%; height:20%;">
 	</div>
 	<!-- 본문 영역 시작 -->
-	<div class="container">
-		<div class="facSearch">
-			<img src="images/addFacBtn.png" width="110px" height="50px" align="right" onclick="location.href='facility.addFacView.do'">
-			<table class="table table-striped" id="resultSector" align="center">
-				<thead>
+	<div class="container" align="center">
+		<div class="addSector">
+		<hr width="600px">
+			<form id="addForm" method="post" action="room.addRoom.do" enctype="multipart/form-data">
+				<table id="addFac" class="addFac" align="center">
 					<tr>
-						<th>번호</th>
-						<th>이름</th>
-						<th>정보</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>버거킹</td>
-						<td>스노우치즈와퍼 짱짱</td>
+						<td width="100px"><label>이름</label></td>
+						<td><input type="text" class="form-control" name="roomNo" id="roomNo"></td>
 					</tr>
 					<tr>
-						<td>1</td>
-						<td>버거킹</td>
-						<td>스노우치즈와퍼 짱짱</td>
+						<td><label>정보</label></td>
+						<td><textarea class="form-control" name="info" id="info"></textarea></td>
 					</tr>
 					<tr>
-						<td>1</td>
-						<td>버거킹</td>
-						<td>스노우치즈와퍼 짱짱</td>
+						<td><label>객실 사진</label></td>
+						<td><input class="form-control" id="files-upload" type="file" multiple></td>
 					</tr>
 					<tr>
-						<td>1</td>
-						<td>버거킹</td>
-						<td>스노우치즈와퍼 짱짱</td>
+						<td></td>
+						<td>
+							<button type="submit" id="regBtn" class="btn btn-danger btn-lg">등록</button>
+							<button type="reset" id="resetBtn" class="btn btn-default btn-lg">취소</button>
+						</td>
 					</tr>
-					<tr>
-						<td>1</td>
-						<td>버거킹</td>
-						<td>스노우치즈와퍼 짱짱</td>
-					</tr>
-				</tbody>
-			</table>			
+				</table>
+			</form>
 		</div>
 	</div>
 	<!-- 본문 영역 끝 -->

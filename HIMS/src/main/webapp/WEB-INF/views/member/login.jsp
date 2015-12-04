@@ -6,11 +6,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>호텔통합관리시스템(HIMS)</title>
 <link rel="stylesheet" type="text/css" href="css/login.css">
+<script type="text/javascript">
+function login() {
+	var userid = document.loginform.getElementById("userid").value;
+	var userpw = document.loginform.getElementById("userpw").value;
+	if(userid=="" || userpw=="") {
+		alert("아이디와 패스워드를 입력하세요.");
+		return false;
+	} else {
+		document.loginform.submit();
+		return true;
+	}
+}
+</script>
 </head>
 <body>
-<header>
-<jsp:include page="../common/header.jsp" />
-</header>
 <div class="viewlogo"align="center">
 	<img src="images/sublogo.png" align="middle" style="width:23%; height:15%;">
 </div>
@@ -22,7 +32,7 @@
 		<input type="password" name="userpw" id="userpw" placeholder=" password"> <br/><br/>
 		<input type="checkbox" name="saveid" id="saveid"> 아이디 저장
 		<input type="checkbox" name="savepw" id="savepw"> 패스워드 저장 <br/><br/><hr/><br/>
-		<button type="submit"  name="action" value="login">LOGIN</button><br/><br/>
+		<button type="submit"  name="action" value="login" onclick="return login()">LOGIN</button><br/><br/>
 		<br/>
 		<a class="joinBtn" href="member.joinView.do">회원가입</a>
 		<a class="findBtn" href="member.findIdView.do">아이디 / </a>
