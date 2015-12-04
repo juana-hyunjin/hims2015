@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syu.mapper.MemberMapper">
+	<resultMap id="memberResult" type="com.syu.hims.dto.Member">
+		<result property="userid" column="USERID" />
+		<result property="userpw" column="USERPW" />
+		<result property="username" column="USERNAME" />
+		<result property="mobile" column="MOBILE" />
+		<result property="mobileId" column="MOBILE_ID" />
+		<result property="email" column="EMAIL" />
+		<result property="birth" column="BIRTH" />
+		<result property="grade" column="GRADE" />
+		<result property="useCount" column="USE_COUNT" />
+	</resultMap>
+	
+	<!-- 아이디 중복확인 -->
+	<select id="checkId" resultType="int" parameterType="HashMap">
+		SELECT COUNT(USERID) FROM MEMBER WHERE USERID = #{userid}
+	</select>
+	
+	<!-- 로그인 (return 등급) -->
+	<select id="selectLogin" resultType="String" parameterType="Hashmap">
+		SELECT GRADE FROM MEMBER
+		WHERE USERID = #{userid} AND USERPW = #{userpw}
+	</select>
+</mapper>

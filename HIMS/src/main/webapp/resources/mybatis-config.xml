@@ -3,7 +3,7 @@
   
 <configuration>
 	<typeAliases>
-		<package name="com.syu.hims" />
+		<package name="com.syu.hims.dto" />
 	</typeAliases>
 
 </configuration>
