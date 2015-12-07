@@ -6,6 +6,7 @@ public class Room {
 	private String floor;
 	private String availability;
 	private int roomTypeNo;
+	
 	public String getRoomNo() {
 		return roomNo;
 	}

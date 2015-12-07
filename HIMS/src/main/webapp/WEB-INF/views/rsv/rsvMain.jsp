@@ -73,8 +73,9 @@
 						<option selected="selected" disabled>선택</option>
 					</select>
 				</td>
-				<td>
+				<td colspan="2" align="left">
 					<button id="assignBtn" type="submit" class="btn btn-danger btn-md" onclick="return assignRoom()">배정하기</button>
+					<button id="chkoutBtn" class="btn btn-success btn-md" onclick="checkoutRoom()">체크아웃</button>
 				</td>
 			</tr>
 			<tr>

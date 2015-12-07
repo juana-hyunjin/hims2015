@@ -12,6 +12,12 @@
 		<result property="grade" column="GRADE" />
 		<result property="useCount" column="USE_COUNT" />
 	</resultMap>
+	<resultMap id="adminlist" type="com.syu.hims.dto.Member">
+		<result property="userid" column="USERID" />
+		<result property="username" column="USERNAME" />
+		<result property="mobile" column="MOBILE" />
+		<result property="email" column="EMAIL" />
+	</resultMap>
 	
 	<!-- 아이디 중복확인 -->
 	<select id="checkId" resultType="int" parameterType="HashMap">
@@ -23,4 +29,32 @@
 		SELECT GRADE FROM MEMBER
 		WHERE USERID = #{userid} AND USERPW = #{userpw}
 	</select>
+	
+	<!-- 관리자 신청한 회원이 있는지 없는지 확인 -->
+	<select id="howmanyAP" resultType="int">
+		SELECT COUNT(USERID) FROM MEMBER WHERE GRADE='AP'
+	</select>
+	
+	<!-- 관리자신청한 회원정보 조회 -->
+	<select id="adminApprovalList" resultMap="adminlist">
+		SELECT USERID, USERNAME, MOBILE, EMAIL
+		FROM MEMBER
+		WHERE GRADE='AP'
+	</select>
+	
+	<!-- 정보 조회 -->
+	<select id="infoSearch" parameterType="hashmap" resultMap="memberResult">
+		SELECT * FROM MEMBER
+		WHERE ${category} LIKE '%' || #{searchData} || '%'
+	</select>
+
+	<!-- 관리자 승인 -->
+	<update id="adminApproval" parameterType="hashmap">
+		UPDATE MEMBER SET GRADE = 'A' WHERE USERID = #{userid}
+	</update>
+	
+	<!-- 관리자 거절 -->
+	<delete id="adminReject" parameterType="hashmap">
+		DELETE FROM MEMBER WHERE USERID = #{userid}
+	</delete>
 </mapper>

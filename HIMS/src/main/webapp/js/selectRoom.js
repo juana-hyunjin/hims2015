@@ -16,11 +16,24 @@ function searchRoomInfo(floorNum) {
 		},
 		success: function(json) {
 			$('#resultSector > tbody > tr').remove();
-			if(floorNum==4) {
-				$('#floormap').attr('src', 'images/map4f.png');
+			if(floorNum == 1) {
+				$('#floormap').attr('src', 'images/map1f.png');
+				$('#floormap').attr('width', '100%');
+				$('#floormap').attr('height', '50%');
+			} else if (floorNum == 2) {
+				$('#floormap').attr('src', 'images/map2f.png');
+				$('#floormap').attr('width', '100%');
+				$('#floormap').attr('height', '50%');
+			} else if (floorNum == 3) {
+				$('#floormap').attr('src', 'images/map3f.png');
+				$('#floormap').attr('width', '100%');
+				$('#floormap').attr('height', '50%');
+			} else if (floorNum == 4) {
+				$('#floormap').attr('src', 'images/4fmap.png');
 				$('#floormap').attr('width', '100%');
 				$('#floormap').attr('height', '50%');
 			}
+				
 			var table = document.getElementById("resultSector");
 			for(var i=0; i<json.length; i++) {
 				var roomNo = json[i].roomNo;

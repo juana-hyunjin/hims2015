@@ -9,6 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/addRoom.css">
+<script language=JavaScript src='js/addRoom.js' charset='euc-kr'></script>
 </head>
 <body>
 	<jsp:include page="../common/header.jsp" />
@@ -30,12 +31,12 @@
 						<td>
 							<select class="form-control" id="typeName" name="typeName">
 								<option selected="selected">선택</option>
-								<option value="SINGLE ROOM">Single Room</option>
-								<option value="TWIN ROOM">Twin Room</option>
-								<option value="DOUBLE ROOM">Double Room</option>
-								<option value="DELUX ROOM">Delux Room</option>
-								<option value="SUITE ROOM">Suite Room</option>
-								<option value="PRESIDENT ROOM">President Room</option>
+								<option value="1">Single Room</option>
+								<option value="2">Twin Room</option>
+								<option value="3">Double Room</option>
+								<option value="4">Delux Room</option>
+								<option value="5">Suite Room</option>
+								<option value="6">President Room</option>
 							</select>
 						</td>
 					</tr>
@@ -60,6 +61,7 @@
 					<tr>
 						<td><label>가격</label></td>
 						<td><input type="text" class="form-control" name="price" id="price"></td>
+						<td align="left" width="150px"><p>ex) 120,000</p></td>
 					</tr>
 					<tr>
 						<td><label>침대</label></td>
@@ -78,16 +80,14 @@
 					</tr>
 					<tr>
 						<td><label>객실 사진</label></td>
-						<td><input class="form-control" id="files-upload" type="file" multiple></td>
-					</tr>
-					<tr>
-						<td></td>
 						<td>
-							<button type="submit" id="regBtn" class="btn btn-danger btn-lg">등록</button>
-							<button type="reset" id="resetBtn" class="btn btn-default btn-lg">취소</button>
-						</td>
-					</tr>
+			                <input type="file" id="file" name="file">
+				        </td>
 				</table>
+				<div id="forButton" align="center">
+					<button type="submit" id="regBtn" class="btn btn-danger btn-md" onclick="return addRoom()">등록</button>
+					<button type="reset" id="resetBtn" class="btn btn-default btn-md">취소</button>
+				</div>
 			</form>
 		</div>
 	</div>

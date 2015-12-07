@@ -15,6 +15,30 @@
 		<result property="bed" column="BED" />
 		<result property="typeName" column="TYPE_NAME" />
 	</resultMap>
+	<resultMap type="com.syu.hims.dto.RoomPics" id="roomPicsResult">
+		<result property="picsNo" column="PICS_NO" />
+		<result property="picsPath" column="PICS_PATH" />
+		<result property="roomTypeNo" column="ROOM_TYPE_NO" />
+		<result property="orgName" column="ORGNAME" />
+		<result property="newName" column="NEWNAME" />
+	</resultMap>
+	<resultMap type="com.syu.hims.dto.Room" id="forMonitoring">
+		<result property="roomNo" column="ROOM_NO" />
+		<result property="availability" column="AVAILABILITY" />
+		<result property="floor" column="FLOOR" />
+	</resultMap>
+	<resultMap id="rsvInfo" type="com.syu.hims.dto.Reservation">
+		<result property="userid" column="USERID" />
+		<result property="chkInDate" column="CHKIN_DATE" />
+		<result property="chkOutDate" column="CHKOUT_DATE" />
+		<result property="roomNo" column="ROOM_NO" />
+	</resultMap>
+	
+	<!-- 객실사진 업로드 -->
+	<insert id="addRoomPics" parameterType="com.syu.hims.dto.RoomPics">
+		INSERT INTO ROOM_PICS
+		VALUES (ROOM_PICS_SEQ.NEXTVAL, #{picsPath}, #{roomTypeNo}, #{orgName, jdbcType=VARCHAR}, #{newName, jdbcType=VARCHAR})
+	</insert>
 	
 	<!-- 객실관리에서 층별 방정보 검색 -->
 	<select id="searchRoomlist" resultMap="roomInfo" parameterType="String">
@@ -23,4 +47,20 @@
 		WHERE R.ROOM_TYPE_NO = RT.ROOM_TYPE_NO
 			  AND FLOOR = #{floor}
 	</select>
+	
+	<!-- 객실모니터링을 위한 층별 객실 사용가능여부 검색 -->
+	<select id="monitoring" resultMap="forMonitoring" parameterType="String">
+		SELECT ROOM_NO, AVAILABILITY
+		FROM ROOM
+		WHERE FLOOR = #{floor}
+	</select>
+	
+	<!-- 객실모니터링시 사용중인 방의 예약자 정보 검색 -->
+	<select id="monitorRsvInfo" parameterType="String" resultMap="rsvInfo">
+		SELECT RV.ROOM_NO, RV.USERID, RV.CHKIN_DATE, RV.CHKOUT_DATE
+		FROM ROOM R, RESERVATION RV
+		WHERE R.AVAILABILITY='X'
+			  AND R.FLOOR = #{floor}
+	</select>
+	
 </mapper>

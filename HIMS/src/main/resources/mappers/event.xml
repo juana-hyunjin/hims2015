@@ -7,6 +7,10 @@
 		<result property="eventTime" column="EVENT_TIME" />
 		<result property="winner" column="WINNER" />
 	</resultMap>
+	<resultMap id="selectFac" type="com.syu.hims.dto.Event">
+		<result property="beaconMinor" column="BEACON_MINOR" />
+		<result property="facName" column="FAC_NAME" />
+	</resultMap>
 	
 	<!-- 이벤트 추가 -->
 	<insert id="addTimeEvent" parameterType="com.syu.hims.dto.Event">
@@ -15,7 +19,13 @@
 	
 	<!-- time이벤트 모든 데이터 검색 -->
 	<select id="selectTimeEvent" resultMap="eventResult">
-		SELECT * FROM TIME_EVENT
+		SELECT * FROM TIME_EVENT ORDER BY BEACON_MINOR, EVENT_TIME
+	</select>
+	
+	<!-- 비콘에 따른 부대시설 이름 검색 -->
+	<select id="selectFacByBeacon" parameterType="int" resultMap="selectFac">
+		SELECT FAC_NAME FROM TIME_EVENT
+		WHERE BEACON_MINOR = #{beaconMinor}
 	</select>
 	
 	<!-- 이벤트 삭제 -->

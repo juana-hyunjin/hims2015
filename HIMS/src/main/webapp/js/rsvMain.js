@@ -23,6 +23,9 @@ function exeAction(actionUrl) {
 				document.getElementById("headCount").value = json[0].headCount;
 				document.getElementById("memo").value = json[0].memo;
 				document.getElementById("floor").disabled = false;
+				if(json[0].username == "") {
+					alert('해당 예약번호가 존재하지 않습니다.');
+				}
 				/* 방배정 여부확인 */
 				if(json[0].roomNo!=0) {
 					document.getElementById("floor").disabled = true;
@@ -100,5 +103,21 @@ function assignRoom() {
 		}
 	});
 	
+}
+
+/**
+ * 체크아웃을 처리하는 함수
+ */
+function checkoutRoom() {
+	var bookNo = document.getElementById("bookNo").value;
+	$.ajax({
+		url: 'rsv.checkout.do',
+		type: 'post',
+		dataType: 'json',
+		data: {
+			"bookNo" : bookNo
+		}
+	});
+	alert('Check out complete.');
 }
 

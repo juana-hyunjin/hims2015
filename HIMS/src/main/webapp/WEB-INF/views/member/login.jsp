@@ -20,7 +20,7 @@ function login() {
 }
 </script>
 </head>
-<body>
+<body style="background-color: #F0F0F0;">
 <div class="viewlogo"align="center">
 	<img src="images/sublogo.png" align="middle" style="width:23%; height:15%;">
 </div>

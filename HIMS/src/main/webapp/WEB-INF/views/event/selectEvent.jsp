@@ -37,10 +37,10 @@
 			<table id="eventlist">
 				<thead>
 					<tr>
-						<th width="100px">비콘 번호</th>
-						<th>부대시설</th>
+						<th width="100px">비콘</th>
+						<th width="200px">부대시설</th>
 						<th width="200px">시간</th>
-						<th>당첨자</th>
+						<th width="100px">당첨자</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -48,10 +48,23 @@
 			<table id="addEventSector">
 				<tr>
 					<td width="100px">
-						<input type="text" class="form-control" name="beaconMinor" id="beaconMinor">
+							<select id="beaconMinor" name="beaconMinor" class="form-control" onChange="selectFac(this.value)">
+								<option selected>선택</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+							</select>
 					</td>
-					<td>
-						<input type="text" class="form-control" name="facName" id="facName">
+					<td width="200px">
+						<select class="form-control" name="facName" id="facName">
+							<option selected>선택</option>
+						</select>
 					</td>
 					<td width="200px">
 						<select id="hour" name="hour" style="width:70px;height:30px;" >
@@ -146,7 +159,7 @@
 							<option value="29">59</option>
 						</select>
 					</td>
-					<td>
+					<td width="100px">
 						<input type="text" class="form-control" name="winner" id="winner" readOnly>
 					</td>
 					<td>

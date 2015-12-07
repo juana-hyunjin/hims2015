@@ -53,4 +53,14 @@ public class EventServiceImpl implements EventService {
 			return false;
 		}
 	}
+	
+	/**
+	 * 비콘에 따른 부대시설 이름 검색
+	 * @param beaconMinor
+	 * @return
+	 */
+	public List<Event> selectFacByBeacon (int beaconMinor) {
+		System.out.println("##Debug_in_EventService: selectFacByBeacon()실행");
+		return dao.selectFacByBeacon(beaconMinor);
+	}
 }

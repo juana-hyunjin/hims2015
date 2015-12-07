@@ -46,4 +46,14 @@ public class EventDAOImpl implements EventDAO {
 		System.out.println("## Debug_in_EventDAO: deleteTimeEvnet()실행");
 		return sqlSession.delete("deleteTimeEvent", map);
 	}
+	
+	/**
+	 * 비콘에 따른 부대시설 이름 검색
+	 * @param beaconMinor
+	 * @return
+	 */
+	public List<Event> selectFacByBeacon (int beaconMinor) {
+		System.out.println("## Debug_in_EventDAO: selectFacByBeacon()실행");
+		return sqlSession.selectList("selectFacByBeacon", beaconMinor);
+	}
 }

@@ -15,11 +15,17 @@ body {
 	margin-top: 50px;
 }
 table {
-	width: 400px;
+	width: 600px;
 }
 table tr {
 	text-align: center;
 }
 table td {
 	padding: 10px;
+}
+a {
+	white-space:nowrap;
+}
+#forButton {
+	margin-bottom: 100px;
 }

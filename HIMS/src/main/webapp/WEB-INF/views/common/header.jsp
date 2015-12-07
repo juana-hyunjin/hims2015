@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,6 +38,9 @@
 			</div>
 			<div class="loginBtn">
 				<img src="images/logoutBtn.png" width="110px" height="40px" align="right" onclick="location.href='member.logout.do'">
+			<c:if test="${sessionScope.grade eq 'M' }">
+				<img src="images/adminApproval.png" width="110px" height="40px" align="right" onclick="location.href='member.adminApprovalView.do'">
+			</c:if>
 			</div>
 		</div>
 		<div class="menubar" align="center">
@@ -52,7 +56,7 @@
 		     </li>
 		     <li><a href="member.member.do">회원관리</a></li>
 		     <li><a href="event.selectEvent.do">이벤트관리</a></li>
-		     <li><a href="#">통계</a></li>
+		     <li><a href="room.monitoringView.do">객실 모니터링</a></li>
 		  </ul>
 		</div>
 	</div>

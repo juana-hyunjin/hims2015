@@ -58,6 +58,17 @@ public class ReservationServiceImpl implements ReservationService {
 	 * @return
 	 */
 	public boolean assignYN(String bookNo) {
+		System.out.println("##Debug_in_rsvService: assignYN()실행");
 		return dao.assginYN(bookNo);
+	}
+	
+	/**
+	 * 체크아웃을 처리하는 메서드
+	 * @param rsvNo
+	 * @return
+	 */
+	public boolean checkOutRoom(String rsvNo) {
+		System.out.println("##Debug in rsvService: checkOutRoom()실행");
+		return dao.checkOutRoom(rsvNo);
 	}
 }

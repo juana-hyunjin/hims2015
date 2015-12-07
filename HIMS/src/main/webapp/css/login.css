@@ -15,10 +15,11 @@ body{
 .loginSector {
 	text-align:center;
 	margin : 0 auto;
-	margin-top:0px;
+	margin-top:30px;
 	width:400px;
 	height:400px;
-	background-color:#ffffff;
+	border: 1px solid #ABABAB;
+	border-radius:6px;
 	opacity:0.8;
 }
 
@@ -65,5 +66,6 @@ body{
 
 .viewlogo {
 	margin-top: 10%;
+	margin-botto: 30px;
 }
 

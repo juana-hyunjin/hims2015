@@ -23,6 +23,7 @@
 	</resultMap>
 	<resultMap id="searchRoom" type="com.syu.hims.dto.Room">
 		<result property="roomNo" column="ROOM_NO" />
+		<result property="roomNo" column="ROOM_NO" />
 	</resultMap>
 	
 	<!-- 예약번호로 해당 데이터 검색 -->
@@ -62,5 +63,14 @@
 		UPDATE RESERVATION
 		SET ROOM_NO = #{roomNo}
 		WHERE RESERVATION_NO = #{bookNo}
+	</update>
+	
+	<!-- 객실 체크아웃 처리 -->
+	<update id="checkoutRoom" parameterType="String">
+		UPDATE ROOM 
+		SET AVAILABILITY = 'O'
+		WHERE ROOM_NO = (SELECT ROOM_NO
+						 FROM RESERVATION
+						 WHERE RESERVATION_NO = #{rsvNo})
 	</update>
 </mapper>

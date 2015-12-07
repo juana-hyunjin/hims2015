@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.swing.plaf.synth.SynthSeparatorUI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -83,6 +84,12 @@ public class ReservationController {
 		Gson gson = new Gson();
 		String json = gson.toJson(map);
 		return json;
+	}
+	
+	@RequestMapping(value="rsv.checkout.do", produces="text/plain;charset=UTF-8")
+	public void checkOutRoom(String bookNo) {
+		System.out.println("##Debug_in_rsvController: checkoutRoom()½ÇÇà");
+		service.checkOutRoom(bookNo);
 	}
 	
 	

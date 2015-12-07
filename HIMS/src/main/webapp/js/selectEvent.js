@@ -13,7 +13,7 @@ window.onload = function() {
 				$('#eventlist').append('<tbody><tr><td>' + beaconMinor + 
 						'</td><td>' + facName + '</td><td>' + eventTime + 
 						'</td><td>' + winner + 
-						'</td><td><button class="btn btn-default btn-md" onclick="deleteEvent()" name="deleteEvent" id="deleteEvent">delete</button></td></tr></tbody>');
+				'</td><td><button class="btn btn-default btn-md" onclick="deleteEvent()" name="deleteEvent" id="deleteEvent">delete</button></td></tr></tbody>');
 			}
 		}
 	});
@@ -40,7 +40,7 @@ function checkedValue(eventType) {
 					$('#eventlist').append('<tbody><tr><td>' + beaconMinor + 
 							'</td><td>' + facName + '</td><td>' + eventTime + 
 							'</td><td>' + winner + 
-							'</td><td><button class="btn btn-default btn-md" onclick="deleteEvent()" name="deleteEvent" id="deleteEvent">delete</button></td></tr></tbody>');
+					'</td><td><button class="btn btn-default btn-md" onclick="deleteEvent()" name="deleteEvent" id="deleteEvent">delete</button></td></tr></tbody>');
 				}
 			}
 		});
@@ -83,7 +83,6 @@ function addEvent() {
 			"winner" : winner
 		},
 		success: function(json) {
-			alert(json[0].beaconMinor);
 			var beaconMinor = json[0].beaconMinor;
 			var facName = json[0].facName;
 			var eventTime = json[0].eventTime;
@@ -91,7 +90,7 @@ function addEvent() {
 			$('#eventlist').append('<tbody><tr><td id="beaconMinor">' + json[0].beaconMinor + 
 					'</td><td>' + json[0].facName + '</td><td>' + json[0].eventTime + 
 					'</td><td>' + " " + 
-					'</td><td><button class="btn btn-default btn-md" onclick="deleteEvent()" name="deleteEvent" id="deleteEvent">delete</button></td></tr></tbody>');
+			'</td><td><button class="btn btn-default btn-md" onclick="deleteEvent()" name="deleteEvent" id="deleteEvent">delete</button></td></tr></tbody>');
 		}
 	});
 	location.reload();
@@ -116,4 +115,34 @@ function deleteEvent() {
 		}
 	});
 	location.reload();
+}
+
+/**
+ * 비콘에 따른 부대시설 검색
+ * @param beaconMinor
+ */
+function selectFac(beaconMinor) {
+	var facName = document.getElementById("facName");
+	while(facName.length>0) {
+		for(var i=0; i<facName.length; i++) {
+			facName.remove(i);
+		}
+	}
+	$.ajax({
+		url: 'event.selectFac.do',
+		type: 'post',
+		dataType: 'json',
+		data: {
+			"beaconMinor" : beaconMinor
+		},
+		success : function(json) {
+			var facName = document.getElementById("facName");
+			for(var i=0; i<json.length; i++) {
+				var newOp = document.createElement('option');
+				newOp.text = json[i].facName;
+				newOp.value = json[i].facName;
+				facName.options.add(newOp);
+			}
+		}
+	})
 }

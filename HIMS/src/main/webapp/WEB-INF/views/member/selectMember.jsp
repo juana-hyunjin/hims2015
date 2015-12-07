@@ -9,6 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/selectMember.css">
+<script language=JavaScript src='js/selectMember.js' charset='euc-kr'></script>
 </head>
 <body>
 	<jsp:include page="../common/header.jsp" />
@@ -16,24 +17,25 @@
 	<img src="images/memberlogo.png" style="width:23%; height:20%;">
 	</div>
 	<div class="container" align="center">
-		<table id="searchSector" id="searchSector" align="center">
+		<table id="searchSector" align="center">
 			 <tr>
 			 	<td><label>검색 분류</label></td>
 				<td>
-					<select class="form-control" id="category" name="category">
-						<option>이름</option>
-						<option>아이디</option>
-						<option>휴대폰</option>
-						<option>생년월일</option>
-						<option>등급</option>
+					<select class="form-control" id="category" name="category" onChange="changeLabel(this.value)">
+						<option selected="selected">선택</option>
+						<option value="이름">이름</option>
+						<option value="아이디">아이디</option>
+						<option value="휴대폰">휴대폰</option>
+						<option value="생년월일">생년월일</option>
+						<option value="등급">등급</option>
 					</select>
 				</td>
-				<td align="right"><label>종류</label></td>
+				<td align="right"><label id="dataCategory" >종류</label></td>
 				<td>
-					<input type="text" class="form-control" name="bookNo" id="bookNo">
+					<input type="text" class="form-control" name="searchData" id="searchData">
 				</td>
 				<td>
-					<button type="button" class="btn btn-default btn-md">
+					<button type="button" class="btn btn-default btn-md" onClick="selectMember()">
 	          		<span class="glyphicon glyphicon-search"></span> Search 
 	       		     </button>
 				</td>
@@ -51,44 +53,6 @@
 					<th>등급</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td>주현진</td>
-					<td>01047069550</td>
-					<td>910823</td>
-					<td>jhj910823</td>
-					<td>jhj910823@naver.com</td>
-					<td>3</td>
-					<td>G</td>
-				</tr>
-				<tr>
-					<td>주현진</td>
-					<td>01047069550</td>
-					<td>910823</td>
-					<td>jhj910823</td>
-					<td>jhj910823@naver.com</td>
-					<td>3</td>
-					<td>G</td>
-				</tr>
-				<tr>
-					<td>주현진</td>
-					<td>01047069550</td>
-					<td>910823</td>
-					<td>jhj910823</td>
-					<td>jhj910823@naver.com</td>
-					<td>3</td>
-					<td>G</td>
-				</tr>
-				<tr>
-					<td>주현진</td>
-					<td>01047069550</td>
-					<td>910823</td>
-					<td>jhj910823</td>
-					<td>jhj910823@naver.com</td>
-					<td>3</td>
-					<td>G</td>
-				</tr>								
-			</tbody>
 		</table>
 	</div>
 	<div class="footer">

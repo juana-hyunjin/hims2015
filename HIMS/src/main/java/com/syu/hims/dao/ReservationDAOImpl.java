@@ -75,7 +75,23 @@ public class ReservationDAOImpl implements ReservationDAO {
 		System.out.println("##Debug_in_rsvDAO: assignYN()실행");
 		int count = sqlSession.selectOne("assignYN", bookNo);
 		System.out.println("assignYN()실행 결과값count: " + count);
-		if(count>0) {
+		if(count > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	/**
+	 * 체크아웃을 처리하는 메서드
+	 * @return
+	 */
+	public boolean checkOutRoom(String rsvNo) {
+		System.out.println("## Debug_in_rsvDAO: checkoutRoom()실행");
+		System.out.println("##debug dao / 예약번호: " + rsvNo);
+		int count = sqlSession.update("checkoutRoom", rsvNo);
+		System.out.println("##debug: count: " + count);
+		if(count > 0) {
 			return true;
 		} else {
 			return false;

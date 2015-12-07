@@ -23,7 +23,7 @@ public class EventController {
 	public String EventView() {
 		return "event/selectEvent";
 	}
-	
+
 	/**
 	 * Time Event의 해당 data list 검색
 	 * @return
@@ -38,7 +38,7 @@ public class EventController {
 		System.out.println(json);
 		return json;
 	}
-	
+
 	/**
 	 * Time Event를 추가하는 메서드
 	 * @param beaconMinor
@@ -60,7 +60,7 @@ public class EventController {
 			return json;
 		}
 	}
-	
+
 	/**
 	 * Time Event 삭제
 	 * @param beaconMinor
@@ -71,5 +71,34 @@ public class EventController {
 		System.out.println("##Debug_in_eventcontroller: deleteTimeEvent()실행");
 		boolean flag = service.deleteTimeEvent(Integer.parseInt(beaconMinor), eventTime);
 		System.out.println("결과 플래그변수: " + flag);
+	}
+
+	/**
+	 * 이벤트 참여여부 확인
+	 * @return
+	 */
+	@RequestMapping("eventChk.do")
+	public String eventChk() {
+		return "event/selectOneEventChk";
+	}
+
+	/**
+	 * 이벤트 참여
+	 * @return
+	 */
+	@RequestMapping("eventWinner.do")
+	public String eventJoin() {
+		return "event/updateEventWinner";
+	}
+	
+	@RequestMapping(value="event.selectFac.do", produces="text/plain;charset=UTF-8")
+	public @ResponseBody String selectFacByBeacon(String beaconMinor) {
+		System.out.println("## Debug_in_eventController: selectFacByBeacon()실행");
+		System.out.println("## ajax debug: beacon값: " + beaconMinor);
+		ArrayList<Event> list = (ArrayList<Event>) service.selectFacByBeacon(Integer.parseInt(beaconMinor));
+		Gson gson = new Gson();
+		String json = gson.toJson(list);
+		System.out.println(json);
+		return json;
 	}
 }
