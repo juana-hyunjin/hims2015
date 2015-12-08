@@ -34,6 +34,11 @@
 		<result property="chkInDate" column="CHKIN_DATE" />
 	</resultMap>
 	
+	<!-- 객실 추가 -->
+	<insert id="addRoom1" parameterType="map">
+		INSERT INTO ROOM VALUES (#{roomNo}, #{floor}, 'O', #{roomTypeNo}, 0)
+	</insert>
+	
 	<!-- 객실사진 업로드 -->
 	<insert id="addRoomPics" parameterType="com.syu.hims.dto.RoomPics">
 		INSERT INTO ROOM_PICS

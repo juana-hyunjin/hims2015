@@ -2,11 +2,11 @@ package com.syu.hims.controller;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -74,23 +74,47 @@ public class RoomController implements ServletContextAware{
 	public ModelAndView addRoom(HttpServletRequest request, RoomPics dto) throws Exception {
 		System.out.println("##Debug_in_roomController: addRoom()실행");
 		ModelAndView mv = new ModelAndView();
-		int roomNo = Integer.parseInt((String)request.getParameter("roomNo"));
 		int roomTypeNo = Integer.parseInt((String) request.getParameter("typeName"));
-		int limitNum = Integer.parseInt((String)request.getParameter("limitNum"));
-		String bed = request.getParameter("bed");
-		String floor = request.getParameter("floor");
-		System.out.println("##debug: request에서 얻어낸 값들: " + roomNo + roomTypeNo + limitNum + bed + floor);
+		String typeName = "";
+		if(roomTypeNo==1) {
+			typeName = "SINGLE ROOM";
+		} else if(roomTypeNo==2) {
+			typeName = "TWIN ROOM";
+		} else if(roomTypeNo==3) {
+			typeName = "DOUBLE ROOM";
+		} else if(roomTypeNo==4) {
+			typeName = "DELUX ROOM";
+		} else if(roomTypeNo==5) {
+			typeName = "SUITE ROOM";
+		} else if(roomTypeNo==6) {
+			typeName = "PRESIDENT ROOM";
+		}
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("roomNo", Integer.parseInt((String)request.getParameter("roomNo")));
+		map.put("roomTypeNo", Integer.parseInt((String) request.getParameter("typeName")));
+		map.put("limitNum", Integer.parseInt((String)request.getParameter("limitNum")));
+		map.put("bed", request.getParameter("bed"));
+		map.put("floor", request.getParameter("floor"));
+		map.put("typeName", typeName);
+		map.put("bed", request.getParameter("bed"));
+		map.put("price", request.getParameter("price"));
+		
+		boolean flag = service.addRoom(map);
+		System.out.println("##debug addroom 결과: " + flag);
+		
 		MultipartFile multi = dto.getFile();
+		
 		if(!multi.isEmpty()) { //파일업로드가 되었다면
 			String orgName = multi.getOriginalFilename();
-			String newName = orgName + System.currentTimeMillis() + multi.getSize();
+			String newName = System.currentTimeMillis() + multi.getSize() + orgName;
 			String picsPath = servletContext.getRealPath("/upload");
 			System.out.println("##debug: " + picsPath);
 			File file = new File(picsPath + newName);
 			dto.setOrgName(orgName);
 			dto.setNewName(newName);
 			dto.setRoomTypeNo(roomTypeNo);
-			dto.setPicsPath(picsPath);
+			dto.setPicsPath("/upload");
 			multi.transferTo(file);
 			if(service.addRoomPics(dto)) {
 				System.out.println("##debug: 객실사진업로드 성공");
@@ -99,7 +123,6 @@ public class RoomController implements ServletContextAware{
 				System.out.println("##debug:  객실사진업로드 실패");
 			}
 		}
-		
 		mv.setViewName("room/selectRoom");
 		return mv;
 	}

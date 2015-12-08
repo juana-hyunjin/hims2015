@@ -1,5 +1,6 @@
 package com.syu.hims.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -31,6 +32,20 @@ public class RoomServiceImpl implements RoomService {
 	public List<RoomType> searchRoomInfo(String floor) {
 		System.out.println("## Debug_in_RoomService: searchRoomInfo실행");
 		return dao.searchRoomInfo(floor);
+	}
+	
+	/**
+	 * 객실 추가를 위한 메서드
+	 * @param map
+	 * @return
+	 */
+	public boolean addRoom(HashMap<String, Object> map) {
+		System.out.println("##Debug_in_roomService: addromm()실행");
+		if(dao.addRoom(map)>0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	/**

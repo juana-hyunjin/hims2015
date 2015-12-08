@@ -1,5 +1,6 @@
 package com.syu.hims.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -33,6 +34,18 @@ public class RoomDAOImpl {
 		return sqlSession.selectList("searchRoomlist", floor);
 	}
 	
+	/**
+	 * 객실을 추가하는 기능
+	 * @param map
+	 * @return
+	 */
+	public int addRoom(HashMap<String, Object> map) {
+		System.out.println("## Debug_in_roomDAO: addRoom()실행");
+		if(sqlSession.insert("addRoom1", map)>0) {
+			return 1;
+		}
+		return 0;
+	}
 	/**
 	 * 객실추가 기능에서 객실 사진업로드를 처리하는 메서드
 	 * @param dto
