@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -134,4 +135,26 @@ public class RoomController implements ServletContextAware{
 		return json;
 	}
 	
+	/**
+	 * 메인에 삽입을 위한
+	 * 현재 객실사용 회원 리스트
+	 * @return
+	 */
+	public ModelAndView rsvlistMain() {
+		System.out.println("## Debug_in_homeController: rsvlistMain()실행");
+		return null;
+	}
+	
+	/**
+	 * 메인삽입
+	 * 층별 현재 객실 사용 회원 리스트
+	 * @param request
+	 * @return
+	 */
+	public ModelAndView index(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView();
+		ArrayList<Reservation> list = (ArrayList<Reservation>) service.monitoringInfo("4");
+		mv.addObject(list);
+		return mv;
+	}
 }

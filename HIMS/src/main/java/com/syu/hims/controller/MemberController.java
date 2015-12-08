@@ -187,6 +187,9 @@ public class MemberController {
 		String userid = request.getParameter("userid");
 		System.out.println("##debug: " + userid);
 		ModelAndView mav = new ModelAndView();
+		ArrayList<Member> list = (ArrayList<Member>) service.adminApprovalList();
+		System.out.println("##debug: " +  list.get(0).getUserid());
+		mav.addObject("list", list);
 		mav.addObject("userid", service.adminApproval(userid));
 		mav.setViewName("member/adminApproval");
 		return mav;
@@ -200,6 +203,9 @@ public class MemberController {
 		System.out.println("## Debug_in_memberController: adminReject()½ÇÇà");
 		String userid = request.getParameter("userid");
 		ModelAndView mav = new ModelAndView();
+		ArrayList<Member> list = (ArrayList<Member>) service.adminApprovalList();
+		System.out.println("##debug: " +  list.get(0).getUserid());
+		mav.addObject("list", list);
 		mav.addObject("userid", service.adminReject(userid));
 		mav.setViewName("member/adminApproval");
 		return mav;

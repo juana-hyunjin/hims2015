@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syu.mapper.RoomMapper">
+	<resultMap type="com.syu.hims.dto.Facility" id="facilityResult">
+		<result property="facNo" column="FAC_NO" />
+		<result property="facName" column="FAC_NAME" />
+		<result property="facInfo" column="FAC_INFO" />
+		<result property="availability" column="AVAILABILITY" />
+		<result property="beaconMinor" column="BEACON_MINOR" />
+	</resultMap>
+	<resultMap type="com.syu.hims.dto.FacilityPics" id="facPicsResult">
+		<result property="picsNo" column="PICS_NO" />
+		<result property="picsPath" column="PICS_PATH" />
+		<result property="facNo" column="FAC_NO" />
+		<result property="orgName" column="ORGNAME" />
+		<result property="newName" column="NEWNAME" />
+	</resultMap>
+</mapper>

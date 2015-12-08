@@ -1,9 +1,4 @@
 @CHARSET "EUC-KR";
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    width: 100%;
-    margin: auto;
-}
 .content {
 	align: center;
 	width: auto;
@@ -11,21 +6,49 @@
 }
 .bottom {
 	width: auto;
+	margin-left: 25%;
 }
 #myCarousel {
 	width: 40%;
 }
 .reservation {
 	float: left;
-	margin-left: 20%;
+	margin-left: 0;
 	width: 25%;
 }
-.business {
+.event {
 	float: left;
-	width: 20%;
+	width: 30%;
+	margin-left: 10%;
 }
-.statistics {
-	float: right;
-	width: 25%;
-	margin-right: 8%;
+form #searchForm {
+	margin-left: 20%;
+}
+#searchSector{
+	margin-left: 70px; 
+	align: left;
+	width: 350px;
+	border: none;
+}
+table #resultSector {
+	float: left;
+	text-align: left;
+}
+#imagelogo {
+	margin-top: 20px;
+	margin-left: 50px;
+}
+#imagelogo2 {
+	margin-top: 20px;
+	margin-left: 0px;
+}
+#eventlist {
+	margin-top:50px;
+}
+.selectType {
+	align: left;
+	text-align: left;
+}
+#ourBusiness {
+	margin-top: 50px;
 }

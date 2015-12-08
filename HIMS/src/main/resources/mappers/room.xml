@@ -28,10 +28,10 @@
 		<result property="floor" column="FLOOR" />
 	</resultMap>
 	<resultMap id="rsvInfo" type="com.syu.hims.dto.Reservation">
+		<result property="roomNo" column="ROOM_NO" />
+		<result property="username" column="USERNAME" />
 		<result property="userid" column="USERID" />
 		<result property="chkInDate" column="CHKIN_DATE" />
-		<result property="chkOutDate" column="CHKOUT_DATE" />
-		<result property="roomNo" column="ROOM_NO" />
 	</resultMap>
 	
 	<!-- 객실사진 업로드 -->
@@ -55,12 +55,15 @@
 		WHERE FLOOR = #{floor}
 	</select>
 	
-	<!-- 객실모니터링시 사용중인 방의 예약자 정보 검색 -->
+	<!-- 객실모니터링시 사용중인 방의 *가장최근* 예약자 정보 검색 -->
 	<select id="monitorRsvInfo" parameterType="String" resultMap="rsvInfo">
-		SELECT RV.ROOM_NO, RV.USERID, RV.CHKIN_DATE, RV.CHKOUT_DATE
-		FROM ROOM R, RESERVATION RV
-		WHERE R.AVAILABILITY='X'
+		SELECT RV.ROOM_NO, M.USERNAME, RV.USERID, MAX(TO_DATE(RV.CHKIN_DATE, 'yyyy-mm-dd'))
+		FROM ROOM R, RESERVATION RV, MEMBER M 
+		WHERE R.ROOM_NO = RV.ROOM_NO
+			  AND RV.USERID = M.USERID
+			  AND R.AVAILABILITY='X'
 			  AND R.FLOOR = #{floor}
+			  GROUP BY RV.ROOM_NO, M.USERNAME, RV.USERID
 	</select>
 	
 </mapper>
